@@ -31,7 +31,7 @@ Model IDs and current per-token prices are listed live at https://cloudgpu.app/a
 
 ## Notes
 
-- Billing is prepaid. Top up with USDT (TRC-20), PayPal (cards accepted) or bank transfer; unused balance does not expire.
+- Billing is prepaid. Top up with USDT (TRC-20) or, for businesses, bank transfer; debit and credit card payments are coming soon. Unused balance does not expire.
 - Requests are forwarded to each model's upstream (DeepSeek's own API and Luchen in mainland China, DeepInfra in the US). Prompt and completion bodies are not stored; token counts, model, latency and error codes are kept for billing.
 - Issues and pull requests welcome. If an example stops working, open an issue and we will fix it the same day.
 
