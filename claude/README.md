@@ -45,8 +45,6 @@ export CLOUDGPU_API_KEY=cgw-sk-...
 
 ### Claude Messages API format (`/v1/messages`, not live yet)
 
-<!-- REQUIRES /v1/messages — do not publish until live -->
-
 | File | What it shows |
 |---|---|
 | [`messages-api/messages.sh`](messages-api/messages.sh) | Raw `POST /v1/messages` with `x-api-key` and `anthropic-version: 2023-06-01` |

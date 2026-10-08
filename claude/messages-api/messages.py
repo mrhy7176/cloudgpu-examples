@@ -1,4 +1,3 @@
-# <!-- REQUIRES /v1/messages — do not publish until live -->
 """Claude Messages API format on cloudgpu.app with the official `anthropic` Python SDK.
 
 base_url is the bare host: the SDK appends /v1/messages itself.

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# <!-- REQUIRES /v1/messages — do not publish until live -->
 #
 # Claude Messages API format (POST /v1/messages) on cloudgpu.app.
 # Same request shape the `anthropic` SDKs and Claude Code send.

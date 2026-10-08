@@ -1,4 +1,3 @@
-<!-- REQUIRES /v1/messages — do not publish until live -->
 
 # Claude Code with cloudgpu.app
 
