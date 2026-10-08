@@ -1,0 +1,2 @@
+# <!-- REQUIRES /v1/messages — do not publish until live -->
+anthropic>=0.40
