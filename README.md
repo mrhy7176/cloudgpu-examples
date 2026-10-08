@@ -62,7 +62,7 @@ Model IDs and current per-token prices are listed live at https://cloudgpu.app/a
 ## Notes
 
 - Billing is prepaid. Top up at https://cloudgpu.app/billing with Alipay, Google Pay, Apple Pay, Visa or Mastercard from $5 in one checkout, or USDT (TRC-20). A first top-up of $10 or more gets a $5 bonus. Unused balance does not expire.
-- Requests are forwarded to each model's upstream (DeepSeek's own API and Luchen in mainland China, DeepInfra in the US; Claude models go through a separate upstream). The gateway itself runs in Hong Kong and has no automatic failover. Prompt and completion bodies are not stored; token counts, model, latency and error codes are kept for billing.
+- Requests are forwarded to each model's upstream (the DeepSeek, GLM, Kimi, MiniMax and FLUX models are served from the US; Claude models go through a separate upstream). The gateway itself runs in Hong Kong and has no automatic failover. Prompt and completion bodies are not stored; token counts, model, latency and error codes are kept for billing.
 - Issues and pull requests welcome. If an example stops working, open an issue and we will fix it the same day.
 
 ## License
