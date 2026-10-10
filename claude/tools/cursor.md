@@ -1,6 +1,8 @@
-# Claude in Cursor via cloudgpu.app
+# Cursor with cloudgpu.app
 
-Cursor talks to custom models over the OpenAI protocol, so this uses the OpenAI-compatible endpoint, which works today.
+> **Claude models are currently available through Claude Code only.** Adding a `claude-*` model to Cursor will not work; use [Claude Code](claude-code.md) for Claude. Cursor works with the other models on the gateway, as below.
+
+Cursor talks to custom models over the OpenAI protocol, so this uses the OpenAI-compatible endpoint `https://cloudgpu.app/v1`.
 
 1. **Settings → Models → API Keys → OpenAI API Key**: paste your `cgw-sk-...` key.
 2. Turn on **Override OpenAI Base URL** and set it to:
@@ -9,13 +11,12 @@ Cursor talks to custom models over the OpenAI protocol, so this uses the OpenAI-
    https://cloudgpu.app/v1
    ```
 
-3. **Add model**: type `claude-sonnet-5-5` (and `claude-opus-5-5` if you want it), then enable it in the model list.
+3. **Add model**: type a model ID exactly as listed on https://cloudgpu.app/api, for example `kimi-k2.7-code`, `deepseek-v4-pro`, `deepseek-v4-flash` or `glm-5.2`, then enable it in the model list.
 4. Click **Verify**. If it reports an invalid key, check that the base URL ends in `/v1` and has no trailing slash.
 5. Pick the model in the chat / agent model dropdown.
 
 ## Notes
 
 - Cursor's menu names move between versions; if the labels above differ, look for "OpenAI API Key" and "Override OpenAI Base URL".
-- If Cursor already lists a built-in Claude model with the same name, make sure the one you select is the custom entry you added; otherwise the request may go through Cursor's own plan instead of your key. If in doubt, watch your balance on https://cloudgpu.app/api/console after a test prompt.
 - Your key is used for the chat and agent models you select. Cursor's built-in Tab completion runs on Cursor's own models and does not use your key.
-- Prices per million tokens: `claude-sonnet-5-5` $1.00 in / $5.00 out, `claude-opus-5-5` $2.00 / $10.00 (8 October 2026; live table at https://cloudgpu.app/api).
+- `kimi-k2.7-code` is the coding-tuned model on the gateway; `deepseek-v4-flash` is the cheap everyday option. Live prices: https://cloudgpu.app/api.
