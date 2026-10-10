@@ -2,7 +2,7 @@
 
 **Claude Code at half the official Claude API price.** Claude Opus, Sonnet and Fable, billed per token from one prepaid balance.
 
-> **Claude models are currently available through Claude Code only** (the official Claude Code CLI and its IDE extensions). Calling `claude-*` models from anything else, including Cursor, Cline, Continue, OpenClaw, the OpenAI or Anthropic SDKs, curl and LangChain, is not supported right now and will fail. Every other model on the gateway (DeepSeek, GLM, Kimi, MiniMax, Qwen, gpt-oss, FLUX, Whisper and more) works in any OpenAI-compatible client through `https://cloudgpu.app/v1`; see the [top-level README](../README.md).
+> **Claude models are currently available through Claude Code only** (the official Claude Code CLI and its IDE extensions). Calling `claude-*` models from anything else, including Cursor, Cline, Continue, OpenClaw, the OpenAI or Anthropic SDKs, curl and LangChain, is not supported right now and will fail. Every other model on the gateway (DeepSeek, GLM, Kimi, MiniMax, gpt-oss, FLUX, Whisper and more) works in any OpenAI-compatible client through `https://cloudgpu.app/v1`; see the [top-level README](../README.md).
 
 ## Set up Claude Code
 

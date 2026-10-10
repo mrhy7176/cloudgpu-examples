@@ -2,7 +2,7 @@
 
 Claude Code is how you use Claude models on cloudgpu.app. Point the official Claude Code CLI (or the Claude Code IDE extensions, which read the same settings) at our endpoint with your cloudgpu.app key, and every Claude model below is billed at half the official per-token price from your prepaid balance.
 
-> **Claude models are currently available through Claude Code only.** Requests for `claude-*` models from any other client (Cursor, Cline, Continue, OpenClaw, the OpenAI or Anthropic SDKs, curl, LangChain, ...) are not supported and will fail. The other models on the gateway (DeepSeek, GLM, Kimi, MiniMax, Qwen, gpt-oss, FLUX, Whisper and more) work in any OpenAI-compatible client; see [`cursor/README.md`](../../cursor/README.md).
+> **Claude models are currently available through Claude Code only.** Requests for `claude-*` models from any other client (Cursor, Cline, Continue, OpenClaw, the OpenAI or Anthropic SDKs, curl, LangChain, ...) are not supported and will fail. The other models on the gateway (DeepSeek, GLM, Kimi, MiniMax, gpt-oss, FLUX, Whisper and more) work in any OpenAI-compatible client; see [`cursor/README.md`](../../cursor/README.md).
 
 ## 1. Environment variables
 
