@@ -8,17 +8,7 @@ Everything here runs against the public endpoint `https://cloudgpu.app/v1`. It i
 
 Claude Opus, Sonnet and Fable are on the same endpoint, at 50% of the official per-token price. Full examples and tool guides: [`claude/`](claude/README.md).
 
-USD per 1M tokens, as of 8 October 2026 (ours / official list):
-
-| Model | Input | Output |
-|---|---|---|
-| `claude-opus-5-5` | **$2.00** / $4.00 | **$10.00** / $20.00 |
-| `claude-opus-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-opus-4-6` | **$2.50** / $5.00 | **$12.50** / $25.00 |
-| `claude-sonnet-5-5`, `claude-sonnet-5` | **$1.00** / $2.00 | **$5.00** / $10.00 |
-| `claude-sonnet-4-6` | **$1.50** / $3.00 | **$7.50** / $15.00 |
-| `claude-fable-5-1`, `claude-fable-5` | **$5.00** / $10.00 | **$25.00** / $50.00 |
-
-No Haiku model. Live prices: https://cloudgpu.app/api.
+No Haiku model. Current per-token prices for every model: https://cloudgpu.app/pricing.
 
 ```python
 from openai import OpenAI
@@ -61,7 +51,7 @@ Model IDs and current per-token prices are listed live at https://cloudgpu.app/a
 
 ## Notes
 
-- Billing is prepaid. Top up at https://cloudgpu.app/billing with Alipay, Google Pay, Apple Pay, Visa or Mastercard from $5 in one checkout, or USDT (TRC-20). A first top-up of $10 or more gets a $5 bonus. Unused balance does not expire.
+- Billing is prepaid. Top up at https://cloudgpu.app/billing with Alipay, Google Pay, Apple Pay, Visa or Mastercard from $5 in one checkout, or USDT (TRC-20). Unused balance does not expire.
 - The gateway runs in Hong Kong and forwards each request to the infrastructure serving that model; there is no automatic failover. Prompt and completion bodies are not stored; token counts, model, latency and error codes are kept for billing.
 - Issues and pull requests welcome. If an example stops working, open an issue and we will fix it the same day.
 
