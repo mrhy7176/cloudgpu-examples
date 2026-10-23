@@ -1,6 +1,8 @@
 
 # Claude Code with cloudgpu.app
 
+Claude Code works with cloudgpu.app out of the box. Point the official Claude Code CLI (or the Claude Code IDE extensions, which read the same settings) at our endpoint with your cloudgpu.app key, and every Claude model below is billed at half the official per-token price from your prepaid balance.
+
 Claude Code speaks the Claude Messages API format (`POST /v1/messages`), so it needs the gateway's Messages endpoint, not the OpenAI-compatible one.
 
 ## 1. Environment variables

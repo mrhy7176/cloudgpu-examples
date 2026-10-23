@@ -2,7 +2,22 @@
 
 Claude Opus, Sonnet and Fable through `https://cloudgpu.app/v1`, at 50% of the official per-token price, on one prepaid balance.
 
-The OpenAI-compatible `POST /v1/chat/completions` endpoint works today with any OpenAI SDK or tool. A Claude Messages API endpoint (`POST /v1/messages`, the format Claude Code and the `anthropic` SDK use) is being built; the examples that need it are marked below.
+Claude models work with any client:
+
+- **OpenAI-compatible** `POST https://cloudgpu.app/v1/chat/completions` for the OpenAI SDKs, Cursor, Cline, Continue, OpenClaw, LangChain and curl (examples: [`python/`](python/), [`node/`](node/), [`curl/`](curl/), tool guides in [`tools/`](tools/)).
+- **Claude Messages API** `POST https://cloudgpu.app/v1/messages` for Claude Code and the `anthropic` SDK (examples: [`messages-api/`](messages-api/)).
+
+## Set up Claude Code
+
+```bash
+export ANTHROPIC_BASE_URL=https://cloudgpu.app
+export ANTHROPIC_AUTH_TOKEN=cgw-sk-...                 # your cloudgpu.app key
+export ANTHROPIC_MODEL=claude-sonnet-5-5               # or claude-opus-5-5, claude-opus-4-7, ...
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5 # no Haiku on the gateway
+claude
+```
+
+Full guide, including `~/.claude/settings.json`, model aliases and troubleshooting: [`tools/claude-code.md`](tools/claude-code.md).
 
 ## Prices (8 October 2026)
 
@@ -43,7 +58,7 @@ export CLOUDGPU_API_KEY=cgw-sk-...
 | [`node/chat.mjs`](node/chat.mjs) | `openai` Node SDK with `baseURL: "https://cloudgpu.app/v1"`, streaming |
 | [`curl/chat.sh`](curl/chat.sh) | Raw `POST /v1/chat/completions` |
 
-### Claude Messages API format (`/v1/messages`, not live yet)
+### Claude Messages API format (`/v1/messages`)
 
 | File | What it shows |
 |---|---|
@@ -58,7 +73,7 @@ export CLOUDGPU_API_KEY=cgw-sk-...
 | Cline | [`tools/cline.md`](tools/cline.md) | Works today (OpenAI-compatible) |
 | Continue | [`tools/continue.md`](tools/continue.md) | Works today (OpenAI-compatible) |
 | OpenClaw | [`tools/openclaw.md`](tools/openclaw.md) | Works today (OpenAI-compatible) |
-| Claude Code | [`tools/claude-code.md`](tools/claude-code.md) | Needs `/v1/messages` (not live yet) |
+| Claude Code | [`tools/claude-code.md`](tools/claude-code.md) | Works today (`/v1/messages`) |
 
 ## Which model
 

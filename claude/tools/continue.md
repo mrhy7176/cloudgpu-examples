@@ -28,5 +28,5 @@ Put `CLOUDGPU_API_KEY=cgw-sk-...` in `~/.continue/.env` (or paste the key direct
 
 ## Notes
 
-- Keep `provider: openai`. Continue's Claude-specific provider expects the Messages API format, which is not live on the gateway yet.
+- This guide uses `provider: openai` because it is the simplest setup. The gateway also serves the Messages API format at `/v1/messages`, so Continue's Claude-specific provider works too if you point it at `https://cloudgpu.app`.
 - For tab autocomplete, a large Claude model is slow and expensive per keystroke; a small, cheap model is a better fit for that role.
