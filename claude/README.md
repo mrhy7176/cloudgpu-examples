@@ -41,7 +41,7 @@ There is no Haiku model on the gateway. Prices can change; the live table is at 
 ## Setup
 
 1. Sign up at https://cloudgpu.app (email or Google).
-2. Top up at https://cloudgpu.app/billing: Alipay, Google Pay, Apple Pay, Visa or Mastercard from $5 in one checkout, or USDT (TRC-20). A first top-up of $10 or more gets a $5 bonus. Balance is prepaid and does not expire.
+2. Top up at https://cloudgpu.app/billing: Alipay, Google Pay, Apple Pay, Visa or Mastercard from $5 in one checkout, or USDT (TRC-20). Balance is prepaid and does not expire.
 3. Create a key in the API console at https://cloudgpu.app/api/console and export it:
 
 ```bash
