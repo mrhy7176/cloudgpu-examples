@@ -15,6 +15,6 @@ Click **Done** and send a short prompt to check it.
 
 ## Notes
 
-- Use the **OpenAI Compatible** provider, not Cline's built-in Claude provider. The built-in one speaks the Messages API format at `/v1/messages`, which is not live on the gateway yet.
+- This guide uses the **OpenAI Compatible** provider. Cline's built-in Claude provider also works (it speaks the Messages API format at `/v1/messages`) if you enable its custom base URL and set it to `https://cloudgpu.app`.
 - Cline's agent loop sends the whole task context on every step, so input tokens dominate the bill. Sonnet at $1.00 per million input tokens is the sensible default; switch the Model ID to `claude-opus-5-5` for the hard tasks.
 - If Cline asks for model info such as context window, leave the defaults unless you hit a limit.

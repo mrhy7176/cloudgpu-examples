@@ -58,7 +58,7 @@ export CLOUDGPU_API_KEY=cgw-sk-...
 | [`node/chat.mjs`](node/chat.mjs) | `openai` Node SDK with `baseURL: "https://cloudgpu.app/v1"`, streaming |
 | [`curl/chat.sh`](curl/chat.sh) | Raw `POST /v1/chat/completions` |
 
-### Claude Messages API format (`/v1/messages`, not live yet)
+### Claude Messages API format (`/v1/messages`)
 
 | File | What it shows |
 |---|---|
@@ -73,7 +73,7 @@ export CLOUDGPU_API_KEY=cgw-sk-...
 | Cline | [`tools/cline.md`](tools/cline.md) | Works today (OpenAI-compatible) |
 | Continue | [`tools/continue.md`](tools/continue.md) | Works today (OpenAI-compatible) |
 | OpenClaw | [`tools/openclaw.md`](tools/openclaw.md) | Works today (OpenAI-compatible) |
-| Claude Code | [`tools/claude-code.md`](tools/claude-code.md) | Needs `/v1/messages` (not live yet) |
+| Claude Code | [`tools/claude-code.md`](tools/claude-code.md) | Works today (`/v1/messages`) |
 
 ## Which model
 

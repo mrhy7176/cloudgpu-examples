@@ -31,7 +31,7 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Works today in Cursor, Cline, Continue and OpenClaw through the OpenAI-compatible endpoint ([setup guides](claude/README.md#tools)). Claude Code support needs the `/v1/messages` endpoint, which is not live yet.
+Works in Cursor, Cline, Continue and OpenClaw through the OpenAI-compatible endpoint, and in Claude Code and the `anthropic` SDKs through the native `/v1/messages` endpoint ([setup guides](claude/README.md#tools)).
 
 | Example | What it shows |
 |---|---|
