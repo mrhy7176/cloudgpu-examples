@@ -12,6 +12,6 @@ client = OpenAI(base_url="https://cloudgpu.app/v1", api_key=os.environ["CLOUDGPU
 
 path = sys.argv[1]
 with open(path, "rb") as audio:
-    # whisper-v3-turbo is faster; whisper-v3 slightly more accurate. Billed per second of audio.
+    # Transcription models: whisper-v3-turbo and whisper-v3. whisper-v3 is the more accurate of the two.
     text = client.audio.transcriptions.create(model="whisper-v3-turbo", file=audio)
 print(text.text)

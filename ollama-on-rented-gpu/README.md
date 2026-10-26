@@ -36,8 +36,8 @@ The vLLM template starts an OpenAI-compatible server on the published port. Same
 
 ## Things to know
 
-- The tunnel is rate-capped per instance (a few MB/s). Fine for chat and embeddings; do not pull model weights through it, do that over SSH on the machine.
-- Cold model load on first request adds roughly 60 to 90 seconds for a 32B model; after that, about a second per chat call from Europe or the US through Cloudflare.
-- Billing is per minute. Stop the instance from the dashboard when you are done; the unused part of the pre-authorised hour is refunded.
+- Download model weight files over SSH on the machine. Use the public HTTPS address for chat, embeddings, and the API calls above.
+- The first request loads the model onto the instance. Later chat calls use the model already loaded.
+- Billing is per minute. Stop the instance from the dashboard when you are done.
 
 Longer write-up: https://cloudgpu.app/blog/ollama-cloud-gpu-public-api-2026

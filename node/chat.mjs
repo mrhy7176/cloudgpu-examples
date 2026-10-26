@@ -12,7 +12,7 @@ const client = new OpenAI({
 
 const prompt = process.argv[2] ?? "Say hello in one sentence.";
 
-// Model IDs and live prices: https://cloudgpu.app/api
+// Model IDs: https://cloudgpu.app/api
 const stream = await client.chat.completions.create({
   model: "deepseek-v4-flash",
   messages: [{ role: "user", content: prompt }],

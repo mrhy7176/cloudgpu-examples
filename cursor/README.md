@@ -35,4 +35,4 @@ models:
 
 ## Which model for coding
 
-`kimi-k2.7-code` is the coding-tuned model on the gateway and `deepseek-v4-pro` the larger general one; `deepseek-v4-flash` is several times cheaper and fine for autocomplete-style use. Try two on the same task before you decide; they are billed per token, so the comparison costs cents. Current prices per million tokens are on https://cloudgpu.app/api; off-peak DeepSeek pricing is passed through automatically.
+`kimi-k2.7-code` is the coding-tuned model on the gateway and `deepseek-v4-pro` the larger general one; `deepseek-v4-flash` is the smaller general model and fine for autocomplete-style use. Try two on the same task before you decide. Model IDs are listed at https://cloudgpu.app/api.
