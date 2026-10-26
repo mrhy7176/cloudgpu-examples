@@ -4,6 +4,16 @@ Code examples for [cloudgpu.app](https://cloudgpu.app/?utm_source=github): GPU r
 
 Everything here runs against the public endpoint `https://cloudgpu.app/v1`. It is OpenAI-compatible, so the official OpenAI SDKs work unchanged: set `base_url` and use a CloudGPU API key.
 
+## Let your AI coding assistant rent the GPU
+
+[`mcp-server/`](mcp-server/README.md) is an MCP server for Cursor, Cline, opencode, Claude Code, VS Code and other MCP clients. Ask the assistant to fine-tune or run something on a GPU, and it quotes the price, rents a GPU once you agree, runs the job, downloads the results and shuts the GPU down. CloudGPU's servers enforce a budget and time limit on every instance it rents.
+
+```bash
+claude mcp add cloudgpu --env CLOUDGPU_API_KEY=cgw-sk-... -- npx -y https://cloudgpu.app/mcp/cloudgpu-mcp-0.1.0.tgz
+```
+
+Setup for every client: https://cloudgpu.app/docs/mcp
+
 ## Claude at half the official price
 
 Claude Opus, Sonnet and Fable are on the same endpoint, at 50% of the official per-token price. Full examples and tool guides: [`claude/`](claude/README.md).
