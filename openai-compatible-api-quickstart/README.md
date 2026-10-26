@@ -10,7 +10,7 @@ This folder has three small, copy-paste examples:
 - **B. Python**: the official OpenAI Python SDK, normal and streaming.
 - **C. Aider**: the terminal coding agent, pointed at the same endpoint.
 
-Model ids and the current per-model rates are in the table on the [CloudGPU AI API page](https://cloudgpu.app/api?utm_source=github&utm_medium=referral&utm_campaign=202611_seg04_codingagent&utm_content=gh_ex_api). The examples use `deepseek-v4-flash`, the model in the /api/docs examples; swap in any chat model id from that table or from `GET /v1/models`.
+Model ids are listed on the [CloudGPU AI API page](https://cloudgpu.app/api?utm_source=github&utm_medium=referral&utm_campaign=202611_seg04_codingagent&utm_content=gh_ex_api). The examples use `deepseek-v4-flash`, the model in the /api/docs examples; swap in any chat model id from that table or from `GET /v1/models`.
 
 ## 0. Get a key
 
