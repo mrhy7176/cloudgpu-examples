@@ -95,7 +95,13 @@ async function connectTo(id) {
   if (inst.status !== "running") {
     throw new Error(
       `Instance ${id} is ${inst.status}` +
-        (inst.status === "creating" ? "; wait for it with get_status (usually about 2 minutes)." : "."),
+        (inst.status === "creating"
+          ? "; wait for it with get_status (usually about 2 minutes)."
+          : inst.failure_reason
+            ? `: ${inst.failure_reason}`
+            : inst.limits && inst.limits.stopped_by
+              ? ` (stopped by its ${inst.limits.stopped_by} limit).`
+              : "."),
     );
   }
   if (!inst.ssh || !inst.ssh.host) throw new Error(`Instance ${id} has no SSH access yet; try get_status again shortly.`);
@@ -506,6 +512,14 @@ if (!cfg.readOnly) {
         session.delete(instance_id);
         return ok({ ...publicInstance(inst), note: "Destroyed. Billing has stopped." });
       } catch (err) {
+        if (err instanceof ApiError && err.code === "cannot_destroy") {
+          // 已经停了（限额到线、余额用完、开出来没 GPU 被平台退款）：告诉助手结果，而不是报错
+          const inst = await api.instance(instance_id).catch(() => null);
+          if (inst && inst.status !== "running") {
+            session.delete(instance_id);
+            return ok({ ...publicInstance(inst), note: "Already stopped; nothing more to do. Billing has stopped." });
+          }
+        }
         if (err instanceof ApiError && err.code === "instance_provisioning") {
           return fail("The instance is still starting and cannot be destroyed yet. Wait for get_status to show running (or failed; failed instances are not charged), then call stop_instance again.");
         }

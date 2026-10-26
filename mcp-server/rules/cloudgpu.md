@@ -26,7 +26,9 @@ Copy this file into your project as `AGENTS.md`, `.cursor/rules/cloudgpu.md`, `.
 
 - Put code and data on the instance with `upload`. Do not upload credentials.
 - Use `run_command` for short steps. For training, long installs or big downloads, use `background=true` and follow progress with `tail_logs`.
-- Instances come with Python and CUDA. Check with `python -c "import torch; print(torch.__version__, torch.cuda.is_available())"` and install the PyTorch build you need if it is missing.
+- Instances come with Python and CUDA, but not always PyTorch. Check first: `nvidia-smi -L` and `python -c "import torch; print(torch.__version__, torch.cuda.is_available())"`.
+- If PyTorch is missing, plain `pip install torch` installs a current CUDA build. It is a few GB, so run it with `background=true`. Index URLs for older CUDA versions (for example `.../whl/cu124`) may have no wheel for the machine's Python, which can be as new as 3.14. Only use them if the project needs that CUDA version, and then create an environment with an older Python first (`conda create -y -n work python=3.12`, then `conda activate work && ...` in each command).
+- If `nvidia-smi` shows no GPU a few minutes after start, stop and tell the user. CloudGPU detects such machines, shuts them down and refunds them automatically.
 - **Do not** change the root password, edit the SSH configuration, change the firewall, or stop the platform's monitoring agent (`cgpu-*` processes). The platform must keep its access to the instance; if that access is lost, the platform shuts the instance down. The MCP server refuses such commands.
 - Never use the GPU for cryptocurrency mining or anything the [acceptable use policy](https://cloudgpu.app/aup) forbids. Instances that do so are shut down.
 
