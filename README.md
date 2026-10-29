@@ -34,6 +34,9 @@ Works in Cursor, Cline, Continue and OpenClaw through the OpenAI-compatible endp
 | [`curl/models.sh`](curl/models.sh) | List the models your key can call |
 | [`cursor/README.md`](cursor/README.md) | Cursor, Cline and Continue settings |
 | [`ollama-on-rented-gpu/README.md`](ollama-on-rented-gpu/README.md) | Calling Ollama or vLLM on a GPU you rented, via its public HTTPS endpoint |
+| [`ollama-open-webui/README.md`](ollama-open-webui/README.md) | Open WebUI on your laptop connected to Ollama, locally or on a rented GPU |
+| [`openai-compatible-api-quickstart/README.md`](openai-compatible-api-quickstart/README.md) | The OpenAI-compatible API from curl, the `openai` Python package and Aider |
+| [`vllm-openai-server/README.md`](vllm-openai-server/README.md) | Serving a model with vLLM's OpenAI-compatible server on a Raw GPU instance, reached over SSH |
 
 ## Setup
 
