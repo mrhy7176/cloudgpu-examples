@@ -59,4 +59,4 @@ Model IDs and current per-token prices are listed live at https://cloudgpu.app/a
 
 MIT
 
-Maintained with Claude Code GitHub Action.
+Maintained with the Claude Code GitHub Action.
