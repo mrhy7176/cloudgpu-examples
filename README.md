@@ -34,6 +34,7 @@ Works in Cursor, Cline, Continue and OpenClaw through the OpenAI-compatible endp
 | [`curl/models.sh`](curl/models.sh) | List the models your key can call |
 | [`cursor/README.md`](cursor/README.md) | Cursor, Cline and Continue settings |
 | [`ollama-on-rented-gpu/README.md`](ollama-on-rented-gpu/README.md) | Calling Ollama or vLLM on a GPU you rented, via its public HTTPS endpoint |
+| [`ai-sdk/`](ai-sdk/README.md) | Vercel AI SDK (`@ai-sdk/openai-compatible`): generateText and streamText |
 
 ## Setup
 
