@@ -1,0 +1,13 @@
+{
+  "name": "cloudgpu-ai-sdk-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "stream": "node stream.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^2.0.0",
+    "ai": "^6.0.0"
+  }
+}
