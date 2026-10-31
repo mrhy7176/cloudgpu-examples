@@ -1,27 +1,8 @@
 # cloudgpu-examples
 
-Code examples for [cloudgpu.app](https://cloudgpu.app/?utm_source=github): GPU rental billed by the minute and an OpenAI-compatible AI API gateway, on one prepaid balance, for developers outside mainland China.
+Code examples for [cloudgpu.app](https://cloudgpu.app/?utm_source=github): GPU rental billed by the minute and an OpenAI-compatible AI API gateway, on one prepaid balance.
 
 Everything here runs against the public endpoint `https://cloudgpu.app/v1`. It is OpenAI-compatible, so the official OpenAI SDKs work unchanged: set `base_url` and use a CloudGPU API key.
-
-## Claude at half the official price
-
-Claude Opus, Sonnet and Fable are on the same endpoint, at 50% of the official per-token price. Full examples and tool guides: [`claude/`](claude/README.md).
-
-No Haiku model. Current per-token prices for every model: https://cloudgpu.app/pricing.
-
-```python
-from openai import OpenAI
-
-client = OpenAI(base_url="https://cloudgpu.app/v1", api_key="cgw-sk-...")
-resp = client.chat.completions.create(
-    model="claude-sonnet-5-5",
-    messages=[{"role": "user", "content": "Write a unit test for this function."}],
-)
-print(resp.choices[0].message.content)
-```
-
-Works in Cursor, Cline, Continue and OpenClaw through the OpenAI-compatible endpoint, and in Claude Code and the `anthropic` SDKs through the native `/v1/messages` endpoint ([setup guides](claude/README.md#tools)).
 
 | Example | What it shows |
 |---|---|
@@ -30,7 +11,6 @@ Works in Cursor, Cline, Continue and OpenClaw through the OpenAI-compatible endp
 | [`python/transcribe.py`](python/transcribe.py) | Speech to text with Whisper through `/v1/audio/transcriptions` |
 | [`node/chat.mjs`](node/chat.mjs) | Same chat call from Node.js with the `openai` package |
 | [`curl/chat.sh`](curl/chat.sh) | The raw HTTP request, nothing else |
-| [`claude/`](claude/README.md) | Claude via the OpenAI SDK (Python, Node), cURL, and tool guides for Cursor, Cline, Continue, OpenClaw and Claude Code |
 | [`curl/models.sh`](curl/models.sh) | List the models your key can call |
 | [`cursor/README.md`](cursor/README.md) | Cursor, Cline and Continue settings |
 | [`ollama-on-rented-gpu/README.md`](ollama-on-rented-gpu/README.md) | Calling Ollama or vLLM on a GPU you rented, via its public HTTPS endpoint |
@@ -48,12 +28,12 @@ export CLOUDGPU_API_KEY=cgw-sk-...
 
 ## Models
 
-Model IDs and current per-token prices are listed live at https://cloudgpu.app/api. As of 8 September 2026 the text models are `deepseek-v4-flash`, `deepseek-v4-pro`, `glm-5.3-flash`, `glm-5.2`, `glm-5.1`, `kimi-k3`, `kimi-k2.7-code`, `kimi-k2.6`, `kimi-k2.5`, `minimax-m3` and `gpt-oss-120b`; image models `flux-1-schnell` and `flux-1-dev`; speech `kokoro-tts` and `chatterbox-tts`; transcription `whisper-v3` and `whisper-v3-turbo`. `curl/models.sh` prints the live list.
+Model IDs are listed live at https://cloudgpu.app/api. As of 8 September 2026 the text models are `deepseek-v4-flash`, `deepseek-v4-pro`, `glm-5.3-flash`, `glm-5.2`, `glm-5.1`, `kimi-k3`, `kimi-k2.7-code`, `kimi-k2.6`, `kimi-k2.5` and `minimax-m3`; image models `flux-1-schnell` and `flux-1-dev`; speech `kokoro-tts` and `chatterbox-tts`; transcription `whisper-v3` and `whisper-v3-turbo`. `curl/models.sh` prints the live list.
 
 ## Notes
 
-- Billing is prepaid. Top up at https://cloudgpu.app/billing with Alipay, Google Pay, Apple Pay, Visa or Mastercard from $5 in one checkout, or USDT (TRC-20). Unused balance does not expire.
-- The gateway runs in Hong Kong and forwards each request to the infrastructure serving that model; there is no automatic failover. Prompt and completion bodies are not stored; token counts, model, latency and error codes are kept for billing.
+- Billing is prepaid. Top up at https://cloudgpu.app/billing with Alipay, Google Pay, Apple Pay, Visa or Mastercard, or USDT (TRC-20). Unused balance does not expire.
+- The gateway forwards each request to the infrastructure serving that model; there is no automatic failover. Prompt and completion bodies are not stored; token counts, model and error codes are kept for billing.
 - Issues and pull requests welcome. If an example stops working, open an issue and we will fix it the same day.
 
 ## License

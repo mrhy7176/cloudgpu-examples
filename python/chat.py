@@ -16,7 +16,7 @@ client = OpenAI(
 
 prompt = sys.argv[1] if len(sys.argv) > 1 else "Say hello in one sentence."
 
-# Model IDs and live prices: https://cloudgpu.app/api
+# Model IDs: https://cloudgpu.app/api
 stream = client.chat.completions.create(
     model="deepseek-v4-flash",
     messages=[{"role": "user", "content": prompt}],

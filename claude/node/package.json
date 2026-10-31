@@ -1,6 +1,0 @@
-{
-  "name": "cloudgpu-examples-claude-node",
-  "private": true,
-  "type": "module",
-  "dependencies": { "openai": "^4.60.0" }
-}

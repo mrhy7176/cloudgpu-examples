@@ -14,7 +14,7 @@ client = OpenAI(base_url="https://cloudgpu.app/v1", api_key=os.environ["CLOUDGPU
 
 prompt = sys.argv[1] if len(sys.argv) > 1 else "a lighthouse at dawn, film photo"
 
-# flux-1-schnell is the cheap fast one; flux-1-dev for quality. Prices: https://cloudgpu.app/api
+# Image models include flux-1-schnell and flux-1-dev. Model IDs: https://cloudgpu.app/api
 result = client.images.generate(
     model="flux-1-schnell",
     prompt=prompt,
